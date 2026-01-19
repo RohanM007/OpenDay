@@ -175,8 +175,7 @@ export const careers = [
       'Testing & Quality Assurance',
       'Version Control & Collaboration'
     ],
-    averageSalary: 'R450,000 - R800,000 per year',
-    keyModules: ['PROG5121', 'MAPC511', 'INSY511']
+    keyModules: ['PROG5121', 'PROG6112', 'INSY511']
   },
   {
     id: 'app-development',
@@ -190,8 +189,7 @@ export const careers = [
       'UI/UX Design',
       'API Integration'
     ],
-    averageSalary: 'R400,000 - R750,000 per year',
-    keyModules: ['PROG5121', 'INSY511', 'CONE5111']
+    keyModules: ['PROG5121', 'PROG6112', 'INSY511']
   },
   {
     id: 'cybersecurity',
@@ -205,8 +203,49 @@ export const careers = [
       'Security Protocols',
       'Ethical Hacking'
     ],
-    averageSalary: 'R500,000 - R900,000 per year',
-    keyModules: ['CONE5111', 'PROG5121', 'MAPC511']
+    keyModules: ['CONE5111', 'CONE5112', 'PROG5121']
+  },
+  {
+    id: 'full-stack-developer',
+    name: 'Full-Stack Developer',
+    description: 'Build complete web applications handling both frontend user interfaces and backend server logic.',
+    icon: '🌐',
+    color: '#8b5cf6',
+    skills: [
+      'Frontend Development',
+      'Backend Development',
+      'Database Management',
+      'Cloud Integration'
+    ],
+    keyModules: ['PROG5121', 'PROG6112', 'INSY6112']
+  },
+  {
+    id: 'mobile-developer',
+    name: 'Mobile App Developer',
+    description: 'Specialize in creating native and cross-platform mobile applications for Android and iOS.',
+    icon: '📲',
+    color: '#f59e0b',
+    skills: [
+      'Android Development (Kotlin)',
+      'Mobile UI/UX',
+      'App Performance Optimization',
+      'Mobile Security'
+    ],
+    keyModules: ['PROG5121', 'PROG6112', 'INSY6112']
+  },
+  {
+    id: 'cloud-developer',
+    name: 'Cloud Developer',
+    description: 'Design and build scalable cloud-based applications and services on platforms like AWS, Azure, and Google Cloud.',
+    icon: '☁️',
+    color: '#06b6d4',
+    skills: [
+      'Cloud Architecture',
+      'Serverless Computing',
+      'Cloud Security',
+      'DevOps & CI/CD'
+    ],
+    keyModules: ['PROG6112', 'CONE5112', 'INSY6112']
   }
 ];
 
