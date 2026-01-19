@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import './App.css'
 import ModuleCard from './components/ModuleCard'
 import CareerCard from './components/CareerCard'
+import ParticleBackground from './components/ParticleBackground'
 import { modules, careers } from './data/modules'
 
 function App() {
@@ -10,6 +12,7 @@ function App() {
 
   return (
     <div className="app">
+      <ParticleBackground />
       <header className="app-header">
         <div className="header-content">
           <h1>🎓 Computer Science First Year</h1>
@@ -55,8 +58,8 @@ function App() {
               <p>Click on any module to see detailed information</p>
             </div>
             <div className="modules-grid">
-              {(activeSemester === 1 ? modules.semester1 : modules.semester2).map((module) => (
-                <ModuleCard key={module.id} module={module} />
+              {(activeSemester === 1 ? modules.semester1 : modules.semester2).map((module, index) => (
+                <ModuleCard key={module.id} module={module} index={index} />
               ))}
             </div>
           </div>
@@ -69,8 +72,8 @@ function App() {
               <p>Discover where your degree can take you</p>
             </div>
             <div className="careers-grid">
-              {careers.map((career) => (
-                <CareerCard key={career.id} career={career} />
+              {careers.map((career, index) => (
+                <CareerCard key={career.id} career={career} index={index} />
               ))}
             </div>
           </div>
