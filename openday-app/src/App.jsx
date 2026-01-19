@@ -20,6 +20,21 @@ function App() {
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
       >
         <div className="header-content">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            style={{ marginBottom: '8px' }}
+          >
+            <p style={{
+              fontSize: '24px',
+              fontWeight: '600',
+              color: '#667eea',
+              margin: 0
+            }}>
+              Welcome to Emeris Open Day
+            </p>
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +59,7 @@ function App() {
             >
               🎓
             </motion.span>
-            {' '}Computer Science First Year
+            {' '}School of Computer Science
           </motion.h1>
           <motion.p
             className="subtitle"
@@ -52,7 +67,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Explore Your Journey into Tech
+            Explore Your First Year Journey into Tech
           </motion.p>
         </div>
       </motion.header>
@@ -136,7 +151,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>University Open Day 2026 | Computer Science Department</p>
+        <p>Emeris University Open Day 2026 | School of Computer Science</p>
       </footer>
     </div>
   )
