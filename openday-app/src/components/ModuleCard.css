@@ -1,0 +1,161 @@
+.module-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  margin-bottom: 16px;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.module-card.expanded {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.module-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.module-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.module-title {
+  flex: 1;
+}
+
+.module-title h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.module-title p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.expand-icon {
+  font-size: 32px;
+  font-weight: 300;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.module-card-content {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.module-description h4,
+.module-topics h4,
+.career-relevance h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.module-description p {
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.module-topics {
+  margin-top: 20px;
+}
+
+.module-topics ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.module-topics li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.module-topics li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.career-relevance {
+  margin-top: 20px;
+}
+
+.relevance-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.relevance-item {
+  display: grid;
+  grid-template-columns: 140px 1fr 60px;
+  align-items: center;
+  gap: 12px;
+}
+
+.career-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.relevance-bar-container {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.relevance-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
+}
+
+.relevance-level {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: right;
+}
+
