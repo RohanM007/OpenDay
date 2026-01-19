@@ -22,8 +22,17 @@ const CareerCard = ({ career, index }) => {
     >
       <motion.div
         className="career-icon"
+        animate={{
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: index * 0.2
+        }}
         whileHover={{
-          scale: 1.2,
+          scale: 1.3,
           rotate: 360,
           transition: { duration: 0.5 }
         }}
