@@ -6,6 +6,7 @@ import { modules, careers } from './data/modules'
 
 function App() {
   const [activeTab, setActiveTab] = useState('modules')
+  const [activeSemester, setActiveSemester] = useState(1)
 
   return (
     <div className="app">
@@ -21,7 +22,7 @@ function App() {
           className={`tab-button ${activeTab === 'modules' ? 'active' : ''}`}
           onClick={() => setActiveTab('modules')}
         >
-          📚 First Semester Modules
+          📚 Modules
         </button>
         <button
           className={`tab-button ${activeTab === 'careers' ? 'active' : ''}`}
@@ -34,12 +35,27 @@ function App() {
       <main className="app-content">
         {activeTab === 'modules' && (
           <div className="modules-section">
+            <div className="semester-toggle">
+              <button
+                className={`semester-button ${activeSemester === 1 ? 'active' : ''}`}
+                onClick={() => setActiveSemester(1)}
+              >
+                Semester 1
+              </button>
+              <button
+                className={`semester-button ${activeSemester === 2 ? 'active' : ''}`}
+                onClick={() => setActiveSemester(2)}
+              >
+                Semester 2
+              </button>
+            </div>
+
             <div className="section-header">
-              <h2>First Semester Modules</h2>
+              <h2>{activeSemester === 1 ? 'First' : 'Second'} Semester Modules</h2>
               <p>Click on any module to see detailed information</p>
             </div>
             <div className="modules-grid">
-              {modules.semester1.map((module) => (
+              {(activeSemester === 1 ? modules.semester1 : modules.semester2).map((module) => (
                 <ModuleCard key={module.id} module={module} />
               ))}
             </div>
