@@ -13,45 +13,100 @@ function App() {
   return (
     <div className="app">
       <ParticleBackground />
-      <header className="app-header">
+      <motion.header
+        className="app-header"
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+      >
         <div className="header-content">
-          <h1>🎓 Computer Science First Year</h1>
-          <p className="subtitle">Explore Your Journey into Tech</p>
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 120
+            }}
+          >
+            <motion.span
+              animate={{
+                rotate: [0, 10, -10, 10, 0],
+                scale: [1, 1.2, 1.2, 1.2, 1]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 3
+              }}
+              style={{ display: 'inline-block' }}
+            >
+              🎓
+            </motion.span>
+            {' '}Computer Science First Year
+          </motion.h1>
+          <motion.p
+            className="subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Explore Your Journey into Tech
+          </motion.p>
         </div>
-      </header>
+      </motion.header>
 
-      <nav className="tab-navigation">
-        <button
+      <motion.nav
+        className="tab-navigation"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+      >
+        <motion.button
           className={`tab-button ${activeTab === 'modules' ? 'active' : ''}`}
           onClick={() => setActiveTab('modules')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           📚 Modules
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           className={`tab-button ${activeTab === 'careers' ? 'active' : ''}`}
           onClick={() => setActiveTab('careers')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           🚀 Career Paths
-        </button>
-      </nav>
+        </motion.button>
+      </motion.nav>
 
       <main className="app-content">
         {activeTab === 'modules' && (
           <div className="modules-section">
-            <div className="semester-toggle">
-              <button
+            <motion.div
+              className="semester-toggle"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <motion.button
                 className={`semester-button ${activeSemester === 1 ? 'active' : ''}`}
                 onClick={() => setActiveSemester(1)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Semester 1
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 className={`semester-button ${activeSemester === 2 ? 'active' : ''}`}
                 onClick={() => setActiveSemester(2)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Semester 2
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
 
             <div className="section-header">
               <h2>{activeSemester === 1 ? 'First' : 'Second'} Semester Modules</h2>
