@@ -78,7 +78,88 @@ export const modules = {
       icon: '💻'
     }
   ],
-  semester2: []
+  semester2: [
+    {
+      id: 'ITPP5112',
+      code: 'ITPP5112',
+      name: 'IT Professional Practice',
+      semester: 2,
+      description: 'Practical and theoretical foundation in developing the skills required as a Professional IT graduate in the workplace.',
+      topics: [
+        'Professional IT Skills',
+        'Workplace Practices',
+        'IT Ethics & Standards',
+        'Communication Skills',
+        'Team Collaboration'
+      ],
+      careerRelevance: {
+        'Software Engineering': 'high',
+        'App Development': 'high',
+        'Cybersecurity': 'high'
+      },
+      icon: '👔'
+    },
+    {
+      id: 'CONE5112',
+      code: 'CONE5112',
+      name: 'Computer Networks 1B',
+      semester: 2,
+      description: 'Foundational knowledge and practical application of network architecture on selected network concepts. Students will gain the necessary skills to solve a broad range of problems in computer networks, including issues related to routing, switching, performance, scalability, security and power efficiency.',
+      topics: [
+        'Routing & Switching',
+        'Network Performance',
+        'Scalability Solutions',
+        'Network Security',
+        'Power Efficiency'
+      ],
+      careerRelevance: {
+        'Software Engineering': 'medium',
+        'App Development': 'medium',
+        'Cybersecurity': 'high'
+      },
+      icon: '🔌'
+    },
+    {
+      id: 'PROG6112',
+      code: 'PROG6112',
+      name: 'Programming 1B',
+      semester: 2,
+      description: 'Augment the skills acquired in Programming 1A by providing students with knowledge of applets, object inheritance and class manipulation and with the skills needed to apply this knowledge to finding program solutions.',
+      topics: [
+        'Applets Development',
+        'Object Inheritance',
+        'Class Manipulation',
+        'Advanced OOP Concepts',
+        'Program Solutions'
+      ],
+      careerRelevance: {
+        'Software Engineering': 'high',
+        'App Development': 'high',
+        'Cybersecurity': 'medium'
+      },
+      icon: '⚡'
+    },
+    {
+      id: 'INSY6112',
+      code: 'INSY6112',
+      name: 'Information Systems 1B',
+      semester: 2,
+      description: 'Provide students with the knowledge and applied skills necessary for the design, implementation and management of database systems.',
+      topics: [
+        'Database Design',
+        'Database Implementation',
+        'Database Management',
+        'SQL & Query Optimization',
+        'Data Modeling'
+      ],
+      careerRelevance: {
+        'Software Engineering': 'high',
+        'App Development': 'high',
+        'Cybersecurity': 'medium'
+      },
+      icon: '🗄️'
+    }
+  ]
 };
 
 export const careers = [
