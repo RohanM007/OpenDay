@@ -1,0 +1,98 @@
+.career-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 4px solid var(--career-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.career-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.career-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.career-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.career-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.career-skills h4,
+.career-salary h4,
+.career-modules h4 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--career-color);
+  margin: 0 0 12px 0;
+}
+
+.career-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.career-skills li {
+  padding: 8px 0;
+  color: #374151;
+  position: relative;
+  padding-left: 24px;
+}
+
+.career-skills li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--career-color);
+  font-weight: bold;
+}
+
+.career-salary {
+  margin-bottom: 24px;
+}
+
+.salary-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--career-color);
+  margin: 0;
+}
+
+.career-modules {
+  margin-top: auto;
+}
+
+.module-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.module-tag {
+  background: var(--career-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
