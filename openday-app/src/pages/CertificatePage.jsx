@@ -185,7 +185,7 @@ const CertificatePage = ({ onBack }) => {
         )}
 
         {activeTab === 'visualizer' && (
-          <CareerPathVisualizer />
+          <CareerPathVisualizer modulesData={certificateModules} careersData={certificateCareers} />
         )}
       </main>
 
