@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import './LandingPage.css';
 import emerisLogo from '../assets/Emeris.png';
+import ParticleBackground from '../components/ParticleBackground';
 
 const LandingPage = ({ onSelectProgram }) => {
   const programs = [
