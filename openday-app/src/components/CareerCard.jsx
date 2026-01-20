@@ -58,31 +58,6 @@ const CareerCard = ({ career, index }) => {
           ))}
         </ul>
       </div>
-
-      <div className="career-modules">
-        <h4>Key Modules</h4>
-        <div className="module-tags">
-          {career.keyModules.map((moduleCode, idx) => (
-            <motion.span
-              key={idx}
-              className="module-tag"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay: index * 0.15 + 0.5 + idx * 0.1,
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.2 }
-              }}
-            >
-              {moduleCode}
-            </motion.span>
-          ))}
-        </div>
-      </div>
     </motion.div>
   );
 };
