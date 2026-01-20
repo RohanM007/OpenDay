@@ -32,9 +32,8 @@ const CareerCard = ({ career, index }) => {
           delay: index * 0.2
         }}
         whileHover={{
-          scale: 1.3,
-          rotate: 360,
-          transition: { duration: 0.5 }
+          scale: 1.2,
+          transition: { duration: 0.3 }
         }}
       >
         {career.icon}
