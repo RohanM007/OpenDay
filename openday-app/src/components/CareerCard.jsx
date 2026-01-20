@@ -15,9 +15,11 @@ const CareerCard = ({ career, index }) => {
         stiffness: 100
       }}
       whileHover={{
-        scale: 1.05,
-        rotate: [0, -1, 1, 0],
-        transition: { duration: 0.3 }
+        y: -8,
+        transition: {
+          duration: 0.2,
+          ease: "easeOut"
+        }
       }}
     >
       <motion.div
