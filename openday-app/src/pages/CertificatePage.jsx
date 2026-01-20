@@ -7,6 +7,8 @@ import ParticleBackground from '../components/ParticleBackground'
 import CareerPathVisualizer from '../components/CareerPathVisualizer'
 import { certificateModules, certificateCareers } from '../data/certificateModules'
 import emerisLogo from '../assets/Emeris.png'
+import higherCertCoursePdf from '../assets/pdfs/highercert-course.pdf'
+import feesPdf from '../assets/pdfs/fees.pdf'
 
 const CertificatePage = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('modules')
@@ -69,6 +71,36 @@ const CertificatePage = ({ onBack }) => {
               <p className="banner-subtitle">Mobile Application and Web Development</p>
             </div>
           </motion.div>
+
+          {/* Download Buttons */}
+          <motion.div
+            className="download-buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <motion.a
+              href={higherCertCoursePdf}
+              download="Higher-Certificate-Course-Information.pdf"
+              className="download-btn course-info-btn"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="download-icon">📄</span>
+              <span className="download-text">Course Information</span>
+            </motion.a>
+            <motion.a
+              href={feesPdf}
+              download="Fees.pdf"
+              className="download-btn fees-btn"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="download-icon">💰</span>
+              <span className="download-text">Fees</span>
+            </motion.a>
+          </motion.div>
+
         </div>
       </motion.header>
 

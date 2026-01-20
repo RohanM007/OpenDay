@@ -404,3 +404,69 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Download Buttons */
+.download-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.download-icon {
+  font-size: 20px;
+}
+
+.download-text {
+  font-weight: 700;
+}
+
+.course-info-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.course-info-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.fees-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.fees-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .download-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
