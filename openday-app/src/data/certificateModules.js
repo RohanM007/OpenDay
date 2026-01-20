@@ -32,7 +32,12 @@ export const certificateModules = {
         'Connect knowledge to world of work contexts',
         'Ask questions when material is unclear'
       ],
-      lifelongValue: 'Essential skills for tertiary study and future career success'
+      lifelongValue: 'Essential skills for tertiary study and future career success',
+      careerRelevance: {
+        'Junior Web Developer': 'high',
+        'Junior Web Content Developer': 'high',
+        'Junior Mobile App Developer': 'high'
+      }
     },
     {
       id: 'imad5112',
@@ -55,7 +60,12 @@ export const certificateModules = {
       moduleType: 'Core Module',
       learningStyle: 'Hands-on, practical development',
       keyFocus: 'Develop an app to solve a real user problem using Kotlin',
-      importance: 'Fundamental to graduating with necessary skills in the Higher Certificate'
+      importance: 'Fundamental to graduating with necessary skills in the Higher Certificate',
+      careerRelevance: {
+        'Junior Web Developer': 'medium',
+        'Junior Web Content Developer': 'low',
+        'Junior Mobile App Developer': 'high'
+      }
     },
     {
       id: 'iprg5111',
@@ -82,7 +92,12 @@ export const certificateModules = {
         'Consistent practice and repetition'
       ],
       keyInsight: 'Not about learning a specific language - focuses on universal logic and problem-solving techniques that apply across all programming languages.',
-      futureConnection: 'Connects directly to every future module involving programming. Skills built here reappear throughout your studies and career.'
+      futureConnection: 'Connects directly to every future module involving programming. Skills built here reappear throughout your studies and career.',
+      careerRelevance: {
+        'Junior Web Developer': 'high',
+        'Junior Web Content Developer': 'medium',
+        'Junior Mobile App Developer': 'high'
+      }
     },
     {
       id: 'iqtt5111',
@@ -104,7 +119,12 @@ export const certificateModules = {
       ],
       context: 'Technologically advanced world with computer-enabled calculations',
       focus: 'Numeracy skills for confidence in using numbers and mathematical approaches in all aspects of life',
-      approach: 'Reviews basic mathematics with real-world applications in data analytics and decision-making'
+      approach: 'Reviews basic mathematics with real-world applications in data analytics and decision-making',
+      careerRelevance: {
+        'Junior Web Developer': 'medium',
+        'Junior Web Content Developer': 'medium',
+        'Junior Mobile App Developer': 'medium'
+      }
     }
   ],
   semester2: [
@@ -135,7 +155,12 @@ export const certificateModules = {
       ],
       approach: 'Hands-on, practical exploration of mobile development',
       keyAdvantage: 'Single codebase for both Android and iOS apps',
-      industryRelevance: 'Mobile technology is increasingly dominant in the digital world'
+      industryRelevance: 'Mobile technology is increasingly dominant in the digital world',
+      careerRelevance: {
+        'Junior Web Developer': 'medium',
+        'Junior Web Content Developer': 'low',
+        'Junior Mobile App Developer': 'high'
+      }
     },
     {
       id: 'pixd5112',
@@ -164,7 +189,12 @@ export const certificateModules = {
       ],
       criticalImpact: 'Determines whether users abandon your app in frustration or recommend it out of satisfaction',
       forDevelopers: 'Essential for developers to understand how design affects usability, learnability, efficiency, and error prevention',
-      outcome: 'Develop applications that people are able to use and that they love'
+      outcome: 'Develop applications that people are able to use and that they love',
+      careerRelevance: {
+        'Junior Web Developer': 'high',
+        'Junior Web Content Developer': 'high',
+        'Junior Mobile App Developer': 'high'
+      }
     },
     {
       id: 'wede5020',
@@ -195,7 +225,12 @@ export const certificateModules = {
         'Ability to create websites from scratch',
         'Robust toolset for web development'
       ],
-      moduleGoal: 'Develop a solid grasp of the three core languages to create a robust toolset for building websites from scratch'
+      moduleGoal: 'Develop a solid grasp of the three core languages to create a robust toolset for building websites from scratch',
+      careerRelevance: {
+        'Junior Web Developer': 'high',
+        'Junior Web Content Developer': 'high',
+        'Junior Mobile App Developer': 'medium'
+      }
     },
     {
       id: 'xhaw5112',
@@ -225,51 +260,49 @@ export const certificateModules = {
       reflectionFocus: 'Develop abilities to reflect on yourself and your peers',
       competencies: 'Application of CCFOs (Critical Cross-Field Outcomes) or global competencies',
       purpose: 'Prepare students for the World of Work',
-      institution: 'Essential part of The IIE qualifications'
+      institution: 'Essential part of The IIE qualifications',
+      careerRelevance: {
+        'Junior Web Developer': 'high',
+        'Junior Web Content Developer': 'high',
+        'Junior Mobile App Developer': 'high'
+      }
     }
   ]
 }
 
 export const certificateCareers = [
   {
-    id: 'mobile-dev',
-    title: 'Mobile App Developer',
-    icon: '📱',
-    description: 'Create innovative mobile applications for Android and iOS platforms using modern frameworks.',
-    salary: 'R250,000 - R450,000',
-    demand: 'Very High',
-    skills: ['React Native', 'Kotlin', 'Android Studio', 'UI/UX Design'],
-    color: '#10b981'
-  },
-  {
-    id: 'web-dev',
-    title: 'Web Developer',
+    id: 'junior-web-dev',
+    title: 'Junior Web Developer',
+    name: 'Junior Web Developer',
     icon: '🌐',
-    description: 'Build responsive, dynamic websites and web applications using modern technologies.',
-    salary: 'R200,000 - R400,000',
+    description: 'Start your career building responsive, dynamic websites and web applications. Work with HTML, CSS, JavaScript, and React to create modern web experiences.',
     demand: 'Very High',
-    skills: ['React', 'JavaScript', 'HTML/CSS', 'Responsive Design'],
-    color: '#3b82f6'
+    skills: ['HTML/CSS', 'JavaScript', 'React', 'Responsive Design', 'Web Development Fundamentals'],
+    color: '#3b82f6',
+    keyModules: ['TWEC5111', 'IPRG5111', 'WEDE5020', 'PIXD5112']
   },
   {
-    id: 'ui-ux',
-    title: 'UI/UX Designer',
-    icon: '🎨',
-    description: 'Design beautiful, user-friendly interfaces and create exceptional user experiences.',
-    salary: 'R220,000 - R420,000',
+    id: 'junior-web-content-dev',
+    title: 'Junior Web Content Developer',
+    name: 'Junior Web Content Developer',
+    icon: '✍️',
+    description: 'Create and manage web content, combining technical skills with creative content development. Build engaging web pages and maintain website content.',
     demand: 'High',
-    skills: ['UI Design', 'UX Research', 'Prototyping', 'User Testing'],
-    color: '#ec4899'
+    skills: ['HTML/CSS', 'Content Management', 'Web Design', 'Technical Writing', 'UI/UX Principles'],
+    color: '#14b8a6',
+    keyModules: ['TWEC5111', 'WEDE5020', 'PIXD5112', 'IQTT5111']
   },
   {
-    id: 'frontend-dev',
-    title: 'Frontend Developer',
-    icon: '💻',
-    description: 'Specialize in creating engaging user interfaces for web and mobile applications.',
-    salary: 'R230,000 - R450,000',
+    id: 'junior-mobile-dev',
+    title: 'Junior Mobile App Developer',
+    name: 'Junior Mobile App Developer',
+    icon: '�',
+    description: 'Begin your mobile development career creating apps for Android and iOS. Use Kotlin, React Native, and modern frameworks to build cross-platform mobile applications.',
     demand: 'Very High',
-    skills: ['React', 'React Native', 'JavaScript', 'CSS'],
-    color: '#8b5cf6'
+    skills: ['Kotlin', 'React Native', 'Android Studio', 'Mobile UI/UX', 'Cross-Platform Development'],
+    color: '#10b981',
+    keyModules: ['IMAD5112', 'MAST5112', 'IPRG5111', 'PIXD5112', 'XHAW5112']
   }
 ]
 
