@@ -32,7 +32,7 @@ function App() {
               color: '#667eea',
               margin: 0
             }}>
-              Welcome to Emeris Open Day
+              Welcome to the Emeris Open Day
             </p>
           </motion.div>
           <motion.h1
@@ -151,7 +151,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Emeris University Open Day 2026 | School of Computer Science</p>
+        <p>Emeris Open Day 2026 | School of Computer Science</p>
       </footer>
     </div>
   )
