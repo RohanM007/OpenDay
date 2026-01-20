@@ -3,12 +3,16 @@ import { motion } from 'framer-motion';
 import './CareerPathVisualizer.css';
 import { modules, careers } from '../data/modules';
 
-const CareerPathVisualizer = () => {
+const CareerPathVisualizer = ({ modulesData, careersData }) => {
   const [selectedCareer, setSelectedCareer] = useState(null);
   const [hoveredModule, setHoveredModule] = useState(null);
 
+  // Use provided data or default to degree data
+  const moduleSource = modulesData || modules;
+  const careerSource = careersData || careers;
+
   // Get all unique modules from both semesters
-  const allModules = [...modules.semester1, ...modules.semester2];
+  const allModules = [...moduleSource.semester1, ...moduleSource.semester2];
 
   // Check if a module is relevant to the selected career
   const isModuleRelevant = (moduleCode, career) => {
@@ -39,7 +43,7 @@ const CareerPathVisualizer = () => {
         <div className="career-selection">
           <h3>Choose Your Career Path</h3>
           <div className="career-buttons">
-            {careers.map((career, index) => (
+            {careerSource.map((career, index) => (
               <motion.button
                 key={career.id}
                 className={`career-btn ${selectedCareer?.id === career.id ? 'active' : ''}`}
@@ -52,7 +56,7 @@ const CareerPathVisualizer = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="career-btn-icon">{career.icon}</span>
-                <span className="career-btn-text">{career.name}</span>
+                <span className="career-btn-text">{career.name || career.title}</span>
               </motion.button>
             ))}
           </div>
