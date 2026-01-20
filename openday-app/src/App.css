@@ -19,33 +19,142 @@
 }
 
 .app-header {
-  background: rgba(255, 255, 255, 0.95);
+  background: #004559;
   backdrop-filter: blur(10px);
-  padding: 48px 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 32px 48px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.app-header h1 {
+/* Brand Section */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+.brand-divider {
+  width: 2px;
+  height: 70px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.university-name {
   margin: 0;
-  font-size: 48px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
-.subtitle {
-  margin: 12px 0 0 0;
-  font-size: 20px;
-  color: #6b7280;
+.department-name {
+  margin: 0;
+  font-size: 16px;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.3px;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.banner-icon {
+  font-size: 56px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.banner-content {
+  flex: 1;
+}
+
+.banner-title {
+  margin: 0 0 8px 0;
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.banner-subtitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3px;
+}
+
+/* Info Pills */
+.header-pills {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.info-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 24px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.info-pill:hover {
+  background: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pill-icon {
+  font-size: 22px;
+}
+
+.pill-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #004559;
+  letter-spacing: 0.3px;
 }
 
 .tab-navigation {
@@ -206,12 +315,58 @@
 }
 
 @media (max-width: 768px) {
-  .app-header h1 {
-    font-size: 32px;
+  .app-header {
+    padding: 24px 20px;
   }
 
-  .subtitle {
+  .header-brand {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .brand-divider {
+    display: none;
+  }
+
+  .header-logo {
+    height: 70px;
+  }
+
+  .university-name {
+    font-size: 22px;
+  }
+
+  .department-name {
+    font-size: 14px;
+  }
+
+  .welcome-banner {
+    flex-direction: column;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .banner-icon {
+    font-size: 48px;
+  }
+
+  .banner-title {
+    font-size: 28px;
+  }
+
+  .banner-subtitle {
     font-size: 16px;
+  }
+
+  .header-pills {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-pill {
+    width: 100%;
+    justify-content: center;
   }
 
   .tab-button {

@@ -6,6 +6,7 @@ import CareerCard from './components/CareerCard'
 import ParticleBackground from './components/ParticleBackground'
 import CareerPathVisualizer from './components/CareerPathVisualizer'
 import { modules, careers } from './data/modules'
+import emerisLogo from './assets/Emeris.png'
 
 function App() {
   const [activeTab, setActiveTab] = useState('modules')
@@ -21,55 +22,55 @@ function App() {
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
       >
         <div className="header-content">
+          {/* Logo and University Name Row */}
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            className="header-brand"
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            style={{ marginBottom: '8px' }}
+            transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <p style={{
-              fontSize: '24px',
-              fontWeight: '600',
-              color: '#667eea',
-              margin: 0
-            }}>
-              Welcome to the Emeris Open Day
-            </p>
+            <motion.div
+              className="logo-container"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img src={emerisLogo} alt="Emeris University Logo" className="header-logo" />
+            </motion.div>
+            <div className="brand-divider"></div>
+            <div className="brand-text">
+              <h2 className="university-name">Emeris</h2>
+              <p className="department-name">School of Computer Science</p>
+            </div>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.5 }}
+
+          {/* Welcome Banner */}
+          <motion.div
+            className="welcome-banner"
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 120
-            }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.span
+            <motion.div
+              className="banner-icon"
               animate={{
                 rotate: [0, 10, -10, 10, 0],
-                scale: [1, 1.2, 1.2, 1.2, 1]
+                scale: [1, 1.1, 1.1, 1.1, 1]
               }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
                 repeatDelay: 3
               }}
-              style={{ display: 'inline-block' }}
             >
               🎓
-            </motion.span>
-            {' '}School of Computer Science
-          </motion.h1>
-          <motion.p
-            className="subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            Explore Your First Year Journey into Tech
-          </motion.p>
+            </motion.div>
+            <div className="banner-content">
+              <h1 className="banner-title">Welcome to Open Day 2026</h1>
+              <p className="banner-subtitle">Discover Your Future in Technology</p>
+            </div>
+          </motion.div>
+
+
         </div>
       </motion.header>
 
