@@ -10,7 +10,7 @@ const LandingPage = ({ onSelectProgram }) => {
       title: 'IIE Bachelor of Computer and Information Science',
       subtitle: 'in Application Development',
       icon: '🎓',
-      duration: '3-4 Years',
+      duration: '3 Years',
       level: 'Degree',
       color: '#004559',
       description: 'Comprehensive degree program covering software development, systems design, and advanced computing concepts.',
@@ -41,6 +41,7 @@ const LandingPage = ({ onSelectProgram }) => {
 
   return (
     <div className="landing-page">
+      <ParticleBackground />
       {/* Header */}
       <motion.header
         className="landing-header"
@@ -55,7 +56,7 @@ const LandingPage = ({ onSelectProgram }) => {
           whileHover={{ scale: 1.05 }}
         />
         <div className="landing-header-text">
-          <h1>Emeris University</h1>
+          <h1>Emeris</h1>
           <p>School of Computer Science</p>
         </div>
       </motion.header>
@@ -68,7 +69,9 @@ const LandingPage = ({ onSelectProgram }) => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <h2>Welcome to Open Day 2026</h2>
-        <p className="welcome-subtitle">Choose Your Path in Technology</p>
+        <p className="welcome-subtitle">Are you ready to take your next step and discover your path in technology?
+          Have a look at our following qualifications below!
+        </p>
       </motion.section>
 
       {/* Program Cards */}
