@@ -86,8 +86,11 @@ const CertificatePage = ({ onBack }) => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="download-icon">📄</span>
-              <span className="download-text">Course Information</span>
+              <span className="download-icon">📥</span>
+              <span className="download-text">
+                <span className="download-label">Download</span>
+                <span className="download-title">Course Information</span>
+              </span>
             </motion.a>
             <motion.a
               href={feesPdf}
@@ -96,8 +99,11 @@ const CertificatePage = ({ onBack }) => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="download-icon">💰</span>
-              <span className="download-text">Fees</span>
+              <span className="download-icon">📥</span>
+              <span className="download-text">
+                <span className="download-label">Download</span>
+                <span className="download-title">Fees Information</span>
+              </span>
             </motion.a>
           </motion.div>
 
