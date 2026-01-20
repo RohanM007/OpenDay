@@ -123,10 +123,37 @@ function App() {
               </motion.button>
             </motion.div>
 
-            <div className="section-header">
+            <motion.div
+              className="section-header compact"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <h2>{activeSemester === 1 ? 'First' : 'Second'} Semester Modules</h2>
-              <p>Click on any module to see detailed information</p>
-            </div>
+              <div className="stats-bar">
+                <motion.div
+                  className="stat-item"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="stat-icon">📚</span>
+                  <span className="stat-text">{activeSemester === 1 ? modules.semester1.length : modules.semester2.length} Core Modules</span>
+                </motion.div>
+                <motion.div
+                  className="stat-item"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="stat-icon">🎯</span>
+                  <span className="stat-text">Click to Explore</span>
+                </motion.div>
+                <motion.div
+                  className="stat-item"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="stat-icon">🚀</span>
+                  <span className="stat-text">Build Your Future</span>
+                </motion.div>
+              </div>
+            </motion.div>
             <div className="modules-grid">
               {(activeSemester === 1 ? modules.semester1 : modules.semester2).map((module, index) => (
                 <ModuleCard key={module.id} module={module} index={index} />
