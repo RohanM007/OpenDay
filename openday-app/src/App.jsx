@@ -4,6 +4,7 @@ import './App.css'
 import ModuleCard from './components/ModuleCard'
 import CareerCard from './components/CareerCard'
 import ParticleBackground from './components/ParticleBackground'
+import CareerPathVisualizer from './components/CareerPathVisualizer'
 import { modules, careers } from './data/modules'
 
 function App() {
@@ -94,6 +95,14 @@ function App() {
         >
           🚀 Career Paths
         </motion.button>
+        <motion.button
+          className={`tab-button ${activeTab === 'visualizer' ? 'active' : ''}`}
+          onClick={() => setActiveTab('visualizer')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          🔗 Your Journey
+        </motion.button>
       </motion.nav>
 
       <main className="app-content">
@@ -174,6 +183,10 @@ function App() {
               ))}
             </div>
           </div>
+        )}
+
+        {activeTab === 'visualizer' && (
+          <CareerPathVisualizer />
         )}
       </main>
 

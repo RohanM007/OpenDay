@@ -178,20 +178,6 @@ export const careers = [
     keyModules: ['PROG5121', 'PROG6112', 'INSY511']
   },
   {
-    id: 'app-development',
-    name: 'App Development',
-    description: 'Create mobile and web applications for iOS, Android, and web platforms.',
-    icon: '📱',
-    color: '#10b981',
-    skills: [
-      'Mobile Development (iOS/Android)',
-      'Web Development',
-      'UI/UX Design',
-      'API Integration'
-    ],
-    keyModules: ['PROG5121', 'PROG6112', 'INSY511']
-  },
-  {
     id: 'cybersecurity',
     name: 'Cybersecurity',
     description: 'Protect systems, networks, and data from cyber threats and security breaches.',
