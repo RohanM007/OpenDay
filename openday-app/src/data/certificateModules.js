@@ -297,7 +297,7 @@ export const certificateCareers = [
     id: 'junior-mobile-dev',
     title: 'Junior Mobile App Developer',
     name: 'Junior Mobile App Developer',
-    icon: '�',
+    icon: '📱',
     description: 'Begin your mobile development career creating apps for Android and iOS. Use Kotlin, React Native, and modern frameworks to build cross-platform mobile applications.',
     demand: 'Very High',
     skills: ['Kotlin', 'React Native', 'Android Studio', 'Mobile UI/UX', 'Cross-Platform Development'],
