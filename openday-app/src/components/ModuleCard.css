@@ -62,6 +62,18 @@
   font-weight: 850;
 }
 
+.mission-available {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: #ff6b9d;
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
 .expand-icon {
   width: 40px;
   height: 40px;

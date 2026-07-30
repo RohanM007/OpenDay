@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ModuleMission from './ModuleMission';
+import { moduleMissions } from '../data/moduleMissions';
 import './ModuleCard.css';
 
 const ModuleCard = ({ module, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const mission = moduleMissions[module.code];
 
   const getRelevanceColor = (level) => {
     switch (level) {
@@ -46,6 +49,7 @@ const ModuleCard = ({ module, index }) => {
         <div className="module-title">
           <h3>{module.code}</h3>
           <p>{module.name}</p>
+          {mission && <span className="mission-available">🎯 Mini mission available</span>}
         </div>
         <motion.div
           className="expand-icon"
@@ -129,6 +133,8 @@ const ModuleCard = ({ module, index }) => {
                 ))}
               </div>
             </motion.div>
+
+            {mission && <ModuleMission mission={mission} />}
           </motion.div>
         )}
       </AnimatePresence>
