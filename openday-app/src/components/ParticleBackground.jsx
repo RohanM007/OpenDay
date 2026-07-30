@@ -1,25 +1,95 @@
-import './ParticleBackground.css'
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
-const particles = [
-  ['8%', '18%', '5px', '0s'],
-  ['18%', '72%', '7px', '1s'],
-  ['31%', '35%', '4px', '2s'],
-  ['46%', '82%', '6px', '0.5s'],
-  ['58%', '14%', '5px', '2.5s'],
-  ['72%', '60%', '7px', '1.5s'],
-  ['84%', '28%', '4px', '3s'],
-  ['93%', '78%', '6px', '0.8s']
-]
+const ParticleBackground = () => {
+  const particlesInit = useCallback(async engine => {
+    await loadSlim(engine);
+  }, []);
 
-const ParticleBackground = () => (
-  <div className="ambient-particles" aria-hidden="true">
-    {particles.map(([left, top, size, delay], index) => (
-      <span
-        key={index}
-        style={{ left, top, width: size, height: size, animationDelay: delay }}
-      />
-    ))}
-  </div>
-)
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        background: {
+          color: {
+            value: "transparent",
+          },
+        },
+        fpsLimit: 120,
+        interactivity: {
+          events: {
+            onClick: {
+              enable: true,
+              mode: "push",
+            },
+            onHover: {
+              enable: true,
+              mode: "repulse",
+            },
+            resize: true,
+          },
+          modes: {
+            push: {
+              quantity: 4,
+            },
+            repulse: {
+              distance: 100,
+              duration: 0.4,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: "#ffffff",
+          },
+          links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.3,
+            width: 1,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: {
+              default: "bounce",
+            },
+            random: false,
+            speed: 1,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              area: 800,
+            },
+            value: 80,
+          },
+          opacity: {
+            value: 0.5,
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            value: { min: 1, max: 3 },
+          },
+        },
+        detectRetina: true,
+      }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+      }}
+    />
+  );
+};
 
-export default ParticleBackground
+export default ParticleBackground;

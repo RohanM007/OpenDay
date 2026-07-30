@@ -9,7 +9,7 @@
   color: #123e49;
 }
 
-.quiz-page > *:not(.particles-container) {
+.quiz-page > *:not(.particles-container):not(#tsparticles) {
   position: relative;
   z-index: 1;
 }

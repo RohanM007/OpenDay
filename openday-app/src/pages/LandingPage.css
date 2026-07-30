@@ -9,7 +9,7 @@
   color: white;
 }
 
-.landing-page > *:not(.particles-container) {
+.landing-page > *:not(.particles-container):not(#tsparticles) {
   position: relative;
   z-index: 1;
 }

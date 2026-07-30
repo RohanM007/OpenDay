@@ -17,7 +17,7 @@
   --page-soft: #fff0c2;
 }
 
-.app > *:not(.particles-container) {
+.app > *:not(.particles-container):not(#tsparticles) {
   position: relative;
   z-index: 1;
 }
