@@ -1,4 +1,115 @@
 export const moduleMissions = {
+  ITPP5112: {
+    type: 'choice',
+    title: 'Handle the team challenge',
+    prompt: 'You discover a serious bug one hour before your team presents an app to a client. The project leader has not noticed it yet.',
+    question: 'What is the most professional response?',
+    options: [
+      {
+        id: 'hide',
+        icon: '🙈',
+        label: 'Hide the bug and hope nobody notices',
+        feedback: 'Hiding a known problem risks trust and gives the team no chance to respond.'
+      },
+      {
+        id: 'report',
+        icon: '🤝',
+        label: 'Tell the team, explain the impact and suggest a workaround',
+        feedback: 'Correct! Clear communication, honesty and a practical response are all part of professional IT practice.'
+      },
+      {
+        id: 'blame',
+        icon: '👉',
+        label: 'Publicly blame the person who wrote that code',
+        feedback: 'Blaming someone does not solve the client’s problem and can damage teamwork.'
+      }
+    ],
+    answer: 'report',
+    success: 'Professional IT work combines technical ability with communication, accountability and teamwork.'
+  },
+  CONE5112: {
+    type: 'choice',
+    title: 'Restore the connection',
+    prompt: 'One classroom computer cannot access the network, but every other computer in the room is working normally.',
+    question: 'What should you check first?',
+    options: [
+      {
+        id: 'building',
+        icon: '🏫',
+        label: 'Replace the entire building network',
+        feedback: 'Because other computers are working, the whole building network is unlikely to be the problem.'
+      },
+      {
+        id: 'local',
+        icon: '🔌',
+        label: 'Check that computer’s cable and network settings',
+        feedback: 'Correct! Troubleshooting starts with the simplest likely cause closest to the affected device.'
+      },
+      {
+        id: 'internet',
+        icon: '🌍',
+        label: 'Contact the internet provider immediately',
+        feedback: 'The internet connection is probably active because the other computers are still online.'
+      }
+    ],
+    answer: 'local',
+    success: 'Great troubleshooting! Start locally, test one likely cause at a time, and expand the investigation only when needed.'
+  },
+  PROG6112: {
+    type: 'choice',
+    title: 'Predict the program output',
+    prompt: 'A program starts with score = 5, adds 3 to the score, and then doubles the result.',
+    question: 'What value will the program display?',
+    options: [
+      {
+        id: '13',
+        icon: '➕',
+        label: '13',
+        feedback: 'This adds the doubled 3 to 5. The program instead completes each instruction in order.'
+      },
+      {
+        id: '16',
+        icon: '⚡',
+        label: '16',
+        feedback: 'Correct! 5 + 3 gives 8, and doubling 8 gives 16.'
+      },
+      {
+        id: '11',
+        icon: '🧮',
+        label: '11',
+        feedback: 'The program doubles the full result of 5 + 3, not just the original score.'
+      }
+    ],
+    answer: '16',
+    success: 'You traced the changing value step by step—the same technique programmers use to understand and debug code.'
+  },
+  INSY6112: {
+    type: 'matching',
+    title: 'Design the student database',
+    prompt: 'Match each piece of student information to the database field that suits it best.',
+    choices: ['Primary key', 'Text field', 'Number field'],
+    pairs: [
+      {
+        id: 'student-id',
+        icon: '🪪',
+        clue: 'A unique student ID used to identify one record',
+        answer: 'Primary key'
+      },
+      {
+        id: 'student-name',
+        icon: '👤',
+        clue: 'The student’s full name',
+        answer: 'Text field'
+      },
+      {
+        id: 'modules-passed',
+        icon: '🔢',
+        clue: 'The number of modules the student has passed',
+        answer: 'Number field'
+      }
+    ],
+    success: 'Database designed! Good field choices keep information organised, searchable and reliable.'
+  },
   MAPC511: {
     type: 'choice',
     title: 'Crack the robot code',
