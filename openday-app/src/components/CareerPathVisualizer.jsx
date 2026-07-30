@@ -5,7 +5,6 @@ import { modules, careers } from '../data/modules';
 
 const CareerPathVisualizer = ({ modulesData, careersData }) => {
   const [selectedCareer, setSelectedCareer] = useState(null);
-  const [hoveredModule, setHoveredModule] = useState(null);
 
   // Use provided data or default to degree data
   const moduleSource = modulesData || modules;
@@ -83,8 +82,6 @@ const CareerPathVisualizer = ({ modulesData, careersData }) => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.05 }}
-                    onMouseEnter={() => setHoveredModule(module.code)}
-                    onMouseLeave={() => setHoveredModule(null)}
                     whileHover={{ scale: 1.05 }}
                   >
                     <div className="module-viz-icon">{module.icon}</div>
