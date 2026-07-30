@@ -74,6 +74,28 @@ const LandingPage = ({ onSelectProgram }) => {
         </p>
       </motion.section>
 
+      <motion.section
+        className="career-quiz-banner"
+        initial={{ opacity: 0, y: 35 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.35 }}
+      >
+        <div className="quiz-banner-icon">🧭</div>
+        <div className="quiz-banner-copy">
+          <span>Not sure where to begin?</span>
+          <h3>Discover the IT career paths that match your interests</h3>
+          <p>Answer 8 quick questions and connect your result to career paths and modules in the Degree.</p>
+        </div>
+        <motion.button
+          className="quiz-banner-button"
+          onClick={() => onSelectProgram('quiz')}
+          whileHover={{ scale: 1.04, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          Find my IT path →
+        </motion.button>
+      </motion.section>
+
       {/* Program Cards */}
       <section className="programs-section">
         <div className="programs-grid">
