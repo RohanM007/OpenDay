@@ -291,6 +291,11 @@
 }
 
 @media (max-width: 920px) {
+  .tab-navigation {
+    backdrop-filter: none;
+    background: rgba(5, 55, 70, 0.97);
+  }
+
   .header-content {
     grid-template-columns: 1fr;
   }

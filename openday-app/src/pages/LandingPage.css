@@ -431,6 +431,10 @@
 }
 
 @media (max-width: 900px) {
+  .floating-tech {
+    backdrop-filter: none;
+  }
+
   .landing-hero {
     min-height: 520px;
   }
@@ -472,17 +476,7 @@
     font-size: clamp(3.6rem, 19vw, 5.5rem);
   }
 
-  .floating-tech-code {
-    left: -20px;
-    top: 28px;
-  }
-
-  .floating-tech-game {
-    right: -20px;
-    top: 60px;
-  }
-
-  .floating-tech-phone {
+  .floating-tech {
     display: none;
   }
 

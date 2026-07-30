@@ -27,3 +27,42 @@ body {
 #root {
   min-height: 100vh;
 }
+
+.page-loader {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  background: linear-gradient(145deg, #062f42, #087a82);
+  color: white;
+  font-weight: 850;
+  text-align: center;
+}
+
+.page-loader span {
+  font-size: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .module-card:hover,
+  .career-card:hover,
+  .program-card:hover {
+    transform: none !important;
+  }
+}

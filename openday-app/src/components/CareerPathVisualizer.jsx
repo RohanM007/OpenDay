@@ -42,17 +42,13 @@ const CareerPathVisualizer = ({ modulesData, careersData }) => {
         <div className="career-selection">
           <h3>Choose Your Career Path</h3>
           <div className="career-buttons">
-            {careerSource.map((career, index) => (
+            {careerSource.map((career) => (
               <motion.button
                 key={career.id}
                 className={`career-btn ${selectedCareer?.id === career.id ? 'active' : ''}`}
                 onClick={() => setSelectedCareer(career)}
                 style={{ '--career-color': career.color }}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <span className="career-btn-icon">{career.icon}</span>
                 <span className="career-btn-text">{career.name || career.title}</span>
@@ -71,54 +67,35 @@ const CareerPathVisualizer = ({ modulesData, careersData }) => {
           >
             <h3>Key Modules for {selectedCareer.name}</h3>
             <div className="modules-grid-viz">
-              {allModules.map((module, index) => {
+              {allModules.map((module) => {
                 const isRelevant = isModuleRelevant(module.code, selectedCareer);
                 const relevanceLevel = getRelevanceLevel(module, selectedCareer);
                 
                 return (
-                  <motion.div
+                  <div
                     key={module.id}
                     className={`module-viz-card ${isRelevant ? 'relevant' : 'not-relevant'} ${relevanceLevel || ''}`}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
                   >
                     <div className="module-viz-icon">{module.icon}</div>
                     <div className="module-viz-code">{module.code}</div>
                     <div className="module-viz-name">{module.name}</div>
                     {relevanceLevel && (
-                      <motion.div 
-                        className={`relevance-badge ${relevanceLevel}`}
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.3 + index * 0.05, type: "spring" }}
-                      >
+                      <div className={`relevance-badge ${relevanceLevel}`}>
                         {relevanceLevel === 'high' ? '⭐⭐⭐' : relevanceLevel === 'medium' ? '⭐⭐' : '⭐'}
-                      </motion.div>
+                      </div>
                     )}
                     {isRelevant && (
-                      <motion.div 
-                        className="key-module-badge"
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        transition={{ delay: 0.4 + index * 0.05, type: "spring", stiffness: 200 }}
-                      >
+                      <div className="key-module-badge">
                         🔑 Key Module
-                      </motion.div>
+                      </div>
                     )}
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
 
             {/* Connection Lines Visualization */}
-            <motion.div 
-              className="connection-info"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
+            <div className="connection-info">
               <div className="legend">
                 <div className="legend-item">
                   <span className="legend-badge high">⭐⭐⭐</span>
@@ -133,7 +110,7 @@ const CareerPathVisualizer = ({ modulesData, careersData }) => {
                   <span>Core Module for this Career</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
 

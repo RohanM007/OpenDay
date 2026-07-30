@@ -9,37 +9,21 @@ const CareerCard = ({ career, index }) => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 0.5,
-        delay: index * 0.15,
-        type: "spring",
-        stiffness: 100
+        duration: 0.25,
+        delay: Math.min(index * 0.04, 0.12),
+        ease: "easeOut"
       }}
       whileHover={{
-        y: -8,
+        y: -3,
         transition: {
           duration: 0.2,
           ease: "easeOut"
         }
       }}
     >
-      <motion.div
-        className="career-icon"
-        animate={{
-          y: [0, -15, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: index * 0.2
-        }}
-        whileHover={{
-          scale: 1.2,
-          transition: { duration: 0.3 }
-        }}
-      >
+      <div className="career-icon">
         {career.icon}
-      </motion.div>
+      </div>
       <h3>{career.name}</h3>
       <p className="career-description">{career.description}</p>
 
@@ -47,14 +31,9 @@ const CareerCard = ({ career, index }) => {
         <h4>Key Skills</h4>
         <ul>
           {career.skills.map((skill, idx) => (
-            <motion.li
-              key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.15 + 0.3 + idx * 0.1 }}
-            >
+            <li key={idx}>
               {skill}
-            </motion.li>
+            </li>
           ))}
         </ul>
       </div>

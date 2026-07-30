@@ -46,7 +46,7 @@ const LandingPage = ({ onSelectProgram }) => {
         className="landing-header"
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.35 }}
       >
         <motion.img 
           src={emerisLogo} 
@@ -66,7 +66,7 @@ const LandingPage = ({ onSelectProgram }) => {
           className="landing-hero"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
         >
           <motion.div className="floating-tech floating-tech-code" animate={{ y: [0, -12, 0], rotate: [-4, 4, -4] }} transition={{ duration: 4, repeat: Infinity }}>{"</>"}</motion.div>
           <motion.div className="floating-tech floating-tech-game" animate={{ y: [0, 10, 0], rotate: [5, -5, 5] }} transition={{ duration: 4.5, repeat: Infinity }}>🎮</motion.div>
@@ -91,7 +91,7 @@ const LandingPage = ({ onSelectProgram }) => {
           className="career-quiz-banner"
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.55, delay: 0.35, type: 'spring' }}
+          transition={{ duration: 0.35, delay: 0.12, type: 'spring' }}
         >
           <div className="quiz-banner-icon">✨</div>
           <div className="quiz-banner-copy">
@@ -123,7 +123,7 @@ const LandingPage = ({ onSelectProgram }) => {
                 style={{ '--program-color': program.color }}
                 initial={{ opacity: 0, y: 50, rotate: index === 0 ? -1 : 1 }}
                 animate={{ opacity: 1, y: 0, rotate: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.15, type: "spring" }}
+                transition={{ duration: 0.4, delay: 0.18 + index * 0.08, type: "spring" }}
                 whileHover={{ y: -10, rotate: index === 0 ? -0.7 : 0.7 }}
                 onClick={() => onSelectProgram(program.id)}
               >

@@ -24,25 +24,22 @@ const ModuleCard = ({ module, index }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        type: "spring",
-        stiffness: 100
+        duration: 0.25,
+        delay: Math.min(index * 0.04, 0.12),
+        ease: "easeOut"
       }}
       whileHover={{
-        scale: 1.02,
-        transition: { duration: 0.2 }
+        y: -2,
+        transition: { duration: 0.15 }
       }}
-      whileTap={{ scale: 0.98 }}
     >
       <div className="module-card-header">
         <motion.div
           className="module-icon"
           animate={{
-            rotate: isExpanded ? 360 : 0,
-            scale: isExpanded ? 1.2 : 1
+            scale: isExpanded ? 1.06 : 1
           }}
-          transition={{ type: "spring", stiffness: 200 }}
+          transition={{ duration: 0.18 }}
         >
           {module.icon}
         </motion.div>
@@ -64,51 +61,31 @@ const ModuleCard = ({ module, index }) => {
         {isExpanded && (
           <motion.div
             className="module-card-content"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.18 }}
           >
-            <motion.div
-              className="module-description"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-            >
+            <div className="module-description">
               <h4>Description</h4>
               <p>{module.description}</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="module-topics"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            <div className="module-topics">
               <h4>Key Topics</h4>
               <ul>
                 {module.topics.map((topic, idx) => (
-                  <motion.li
-                    key={idx}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 + idx * 0.05 }}
-                  >
+                  <li key={idx}>
                     {topic}
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="career-relevance"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+            <div className="career-relevance">
               <h4>Career Relevance</h4>
               <div className="relevance-bars">
-                {Object.entries(module.careerRelevance).map(([career, level], idx) => (
+                {Object.entries(module.careerRelevance).map(([career, level]) => (
                   <div key={career} className="relevance-item">
                     <span className="career-name">{career}</span>
                     <div className="relevance-bar-container">
@@ -119,9 +96,8 @@ const ModuleCard = ({ module, index }) => {
                           width: level === 'high' ? '100%' : level === 'medium' ? '66%' : '33%'
                         }}
                         transition={{
-                          delay: 0.5 + idx * 0.1,
-                          duration: 0.5,
-                          type: "spring"
+                          duration: 0.22,
+                          ease: "easeOut"
                         }}
                         style={{
                           backgroundColor: getRelevanceColor(level)
@@ -132,7 +108,7 @@ const ModuleCard = ({ module, index }) => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {mission && <ModuleMission mission={mission} />}
           </motion.div>

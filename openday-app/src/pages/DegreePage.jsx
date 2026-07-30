@@ -17,9 +17,9 @@ const DegreePage = ({ onBack }) => {
       <ParticleBackground />
       <motion.header
         className="app-header"
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -18 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         <div className="header-content">
           {/* Logo and University Name Row */}
@@ -27,7 +27,7 @@ const DegreePage = ({ onBack }) => {
             className="header-brand"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.25 }}
           >
             <motion.div
               className="logo-container"
@@ -48,22 +48,11 @@ const DegreePage = ({ onBack }) => {
             className="welcome-banner"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.28, delay: 0.05 }}
           >
-            <motion.div
-              className="banner-icon"
-              animate={{
-                rotate: [0, 10, -10, 10, 0],
-                scale: [1, 1.1, 1.1, 1.1, 1]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatDelay: 3
-              }}
-            >
+            <div className="banner-icon">
               🎓
-            </motion.div>
+            </div>
             <div className="banner-content">
               <span className="banner-kicker">Choose your adventure</span>
               <h1 className="banner-title">Bachelor of Computer and Information Science</h1>
@@ -78,7 +67,7 @@ const DegreePage = ({ onBack }) => {
         className="tab-navigation"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
+        transition={{ duration: 0.25, delay: 0.08 }}
       >
         <motion.button
           className={`tab-button ${activeTab === 'modules' ? 'active' : ''}`}
@@ -113,7 +102,7 @@ const DegreePage = ({ onBack }) => {
               className="semester-toggle"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.22 }}
             >
               <motion.button
                 className={`semester-button ${activeSemester === 1 ? 'active' : ''}`}

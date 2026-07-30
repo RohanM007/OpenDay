@@ -23,7 +23,6 @@
 
 .visualizer-content {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   border-radius: 24px;
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -251,6 +250,12 @@
   .legend {
     flex-direction: column;
     gap: 16px;
+  }
+}
+
+@media (hover: hover) {
+  .module-viz-card:hover {
+    transform: translateY(-2px);
   }
 }
 

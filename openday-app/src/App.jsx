@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import LandingPage from './pages/LandingPage'
-import DegreePage from './pages/DegreePage'
-import CertificatePage from './pages/CertificatePage'
-import CareerQuizPage from './pages/CareerQuizPage'
+
+const DegreePage = lazy(() => import('./pages/DegreePage'))
+const CertificatePage = lazy(() => import('./pages/CertificatePage'))
+const CareerQuizPage = lazy(() => import('./pages/CareerQuizPage'))
 
 function App() {
   const [currentPage, setCurrentPage] = useState('landing')
@@ -15,26 +16,28 @@ function App() {
     setCurrentPage('landing')
   }
 
-  // Render the appropriate page
+  let page
+
   if (currentPage === 'degree') {
-    return <DegreePage onBack={handleBackToLanding} />
-  }
-
-  if (currentPage === 'certificate') {
-    return <CertificatePage onBack={handleBackToLanding} />
-  }
-
-  if (currentPage === 'quiz') {
-    return (
+    page = <DegreePage onBack={handleBackToLanding} />
+  } else if (currentPage === 'certificate') {
+    page = <CertificatePage onBack={handleBackToLanding} />
+  } else if (currentPage === 'quiz') {
+    page = (
       <CareerQuizPage
         onBack={handleBackToLanding}
         onSelectProgram={handleSelectProgram}
       />
     )
+  } else {
+    page = <LandingPage onSelectProgram={handleSelectProgram} />
   }
 
-  // Default: show landing page
-  return <LandingPage onSelectProgram={handleSelectProgram} />
+  return (
+    <Suspense fallback={<div className="page-loader"><span>⚡</span> Loading your adventure…</div>}>
+      {page}
+    </Suspense>
+  )
 }
 
 export default App
