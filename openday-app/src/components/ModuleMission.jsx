@@ -2,7 +2,88 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import './ModuleMission.css'
 
-const ModuleMission = ({ mission }) => {
+const MatchingMission = ({ mission }) => {
+  const [answers, setAnswers] = useState({})
+  const [completed, setCompleted] = useState(false)
+
+  const chooseAnswer = (pairId, choice) => {
+    const pair = mission.pairs.find((item) => item.id === pairId)
+    const nextAnswers = {
+      ...answers,
+      [pairId]: { choice, correct: choice === pair.answer }
+    }
+    setAnswers(nextAnswers)
+    setCompleted(mission.pairs.every((item) => nextAnswers[item.id]?.correct))
+  }
+
+  const reset = () => {
+    setAnswers({})
+    setCompleted(false)
+  }
+
+  return (
+    <section className="module-mission" onClick={(event) => event.stopPropagation()}>
+      <div className="mission-heading">
+        <div className="mission-badge">🎯 Mini mission</div>
+        <span>About 30 seconds</span>
+      </div>
+      <h4>{mission.title}</h4>
+      <p>{mission.prompt}</p>
+
+      <div className="matching-grid">
+        {mission.pairs.map((pair, index) => {
+          const answer = answers[pair.id]
+          return (
+            <div className={`matching-card ${answer ? (answer.correct ? 'correct' : 'incorrect') : ''}`} key={pair.id}>
+              <div className="matching-clue">
+                <span>{pair.icon}</span>
+                <div>
+                  <small>Network job {index + 1}</small>
+                  <strong>{pair.clue}</strong>
+                </div>
+              </div>
+              <div className="matching-choices">
+                {mission.choices.map((choice) => (
+                  <button
+                    key={choice}
+                    className={answer?.choice === choice ? 'selected' : ''}
+                    onClick={() => chooseAnswer(pair.id, choice)}
+                  >
+                    {choice}
+                  </button>
+                ))}
+              </div>
+              {answer && (
+                <p className="matching-feedback">
+                  {answer.correct ? '✓ Correct match!' : 'Not quite—try another device.'}
+                </p>
+              )}
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="mission-actions">
+        <button className="mission-reset" onClick={reset} disabled={Object.keys(answers).length === 0}>Reset mission</button>
+      </div>
+
+      <AnimatePresence>
+        {completed && (
+          <motion.div
+            className="mission-feedback correct"
+            initial={{ opacity: 0, y: 10, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+          >
+            <strong>🎉 Network online!</strong>
+            <p>{mission.success}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  )
+}
+
+const SequenceMission = ({ mission }) => {
   const [selected, setSelected] = useState([])
   const [result, setResult] = useState(null)
 
@@ -102,5 +183,11 @@ const ModuleMission = ({ mission }) => {
     </section>
   )
 }
+
+const ModuleMission = ({ mission }) => (
+  mission.type === 'matching'
+    ? <MatchingMission mission={mission} />
+    : <SequenceMission mission={mission} />
+)
 
 export default ModuleMission
