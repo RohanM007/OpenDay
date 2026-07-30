@@ -83,6 +83,58 @@ const MatchingMission = ({ mission }) => {
   )
 }
 
+const ChoiceMission = ({ mission }) => {
+  const [selected, setSelected] = useState(null)
+  const selectedOption = mission.options.find((option) => option.id === selected)
+  const correct = selected === mission.answer
+
+  return (
+    <section className="module-mission" onClick={(event) => event.stopPropagation()}>
+      <div className="mission-heading">
+        <div className="mission-badge">🎯 Mini mission</div>
+        <span>About 20 seconds</span>
+      </div>
+      <h4>{mission.title}</h4>
+      <div className="choice-scenario">
+        <span>📣 Your scenario</span>
+        <p>{mission.prompt}</p>
+      </div>
+      <h5 className="choice-question">{mission.question}</h5>
+
+      <div className="choice-options">
+        {mission.options.map((option) => (
+          <motion.button
+            key={option.id}
+            className={selected === option.id ? (correct ? 'selected correct' : 'selected incorrect') : ''}
+            onClick={() => setSelected(option.id)}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <span>{option.icon}</span>
+            {option.label}
+          </motion.button>
+        ))}
+      </div>
+
+      <AnimatePresence mode="wait">
+        {selectedOption && (
+          <motion.div
+            key={selected}
+            className={`mission-feedback ${correct ? 'correct' : 'incorrect'}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <strong>{correct ? '🎉 Great system choice!' : '💡 Think about the whole process'}</strong>
+            <p>{selectedOption.feedback}</p>
+            {correct && <p>{mission.success}</p>}
+            {!correct && <button onClick={() => setSelected(null)}>Choose again</button>}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  )
+}
+
 const SequenceMission = ({ mission }) => {
   const [selected, setSelected] = useState([])
   const [result, setResult] = useState(null)
@@ -184,10 +236,10 @@ const SequenceMission = ({ mission }) => {
   )
 }
 
-const ModuleMission = ({ mission }) => (
-  mission.type === 'matching'
-    ? <MatchingMission mission={mission} />
-    : <SequenceMission mission={mission} />
-)
+const ModuleMission = ({ mission }) => {
+  if (mission.type === 'matching') return <MatchingMission mission={mission} />
+  if (mission.type === 'choice') return <ChoiceMission mission={mission} />
+  return <SequenceMission mission={mission} />
+}
 
 export default ModuleMission

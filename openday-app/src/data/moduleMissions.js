@@ -1,4 +1,32 @@
 export const moduleMissions = {
+  INSY511: {
+    type: 'choice',
+    title: 'Solve the information problem',
+    prompt: 'A campus gaming club has grown to 200 members. Sign-ups are kept in messages, payments are tracked on paper, and event reminders are often missed.',
+    question: 'Which solution would help the club most?',
+    options: [
+      {
+        id: 'social',
+        icon: '📱',
+        label: 'Create another social media group',
+        feedback: 'That may help communication, but membership and payment information would still be scattered.'
+      },
+      {
+        id: 'system',
+        icon: '🗂️',
+        label: 'Build one club management system',
+        feedback: 'Exactly! One system can manage members, payments, events, and reminders using organised information.'
+      },
+      {
+        id: 'paper',
+        icon: '📝',
+        label: 'Use a larger paper sign-up book',
+        feedback: 'A larger book still makes searching, updating, and sharing information difficult.'
+      }
+    ],
+    answer: 'system',
+    success: 'You thought like a business analyst—understand the problem first, then choose a system that improves the whole process.'
+  },
   CONE5111: {
     type: 'matching',
     title: 'Build the network',
