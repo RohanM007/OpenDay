@@ -254,3 +254,47 @@
   }
 }
 
+/* Open Day adventure theme */
+.visualizer-header h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.visualizer-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.visualizer-content {
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.career-btn {
+  min-height: 52px;
+  border-radius: 15px;
+  font-weight: 850;
+}
+
+.career-btn.active {
+  transform: rotate(-1deg) translateY(-2px);
+}
+
+.module-viz-card {
+  border: 3px solid rgba(255, 255, 255, 0.38);
+  border-radius: 19px;
+}
+
+.module-viz-card.relevant {
+  background: linear-gradient(145deg, #f3ffff, #c9f4f2);
+}
+
+.key-module-badge {
+  background: linear-gradient(120deg, #ff6b9d, #a855f7);
+}
+
+.connection-info {
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
