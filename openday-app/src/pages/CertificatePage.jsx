@@ -13,7 +13,7 @@ const CertificatePage = ({ onBack }) => {
   const [activeSemester, setActiveSemester] = useState(1)
 
   return (
-    <div className="app">
+    <div className="app certificate-app">
       <ParticleBackground />
       <motion.header
         className="app-header"
@@ -65,8 +65,9 @@ const CertificatePage = ({ onBack }) => {
               📱
             </motion.div>
             <div className="banner-content">
+              <span className="banner-kicker">Fast-track your tech journey</span>
               <h1 className="banner-title">IIE Higher Certificate</h1>
-              <p className="banner-subtitle">Mobile Application and Web Development</p>
+              <p className="banner-subtitle">Mobile Application and Web Development · 1 Year · Learn by building</p>
             </div>
           </motion.div>
 
