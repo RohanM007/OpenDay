@@ -1,4 +1,32 @@
 export const moduleMissions = {
+  MAPC511: {
+    type: 'choice',
+    title: 'Crack the robot code',
+    prompt: 'A robot uses a three-digit access code. The first digit is 2. The second digit is double the first. The final digit is the first two digits added together.',
+    question: 'Which access code will unlock the robot?',
+    options: [
+      {
+        id: '246',
+        icon: '🔢',
+        label: '246',
+        feedback: 'Correct! Start with 2, double it to get 4, then add 2 + 4 to get 6.'
+      },
+      {
+        id: '248',
+        icon: '🤖',
+        label: '248',
+        feedback: 'The first two digits work, but the final digit should be 2 + 4, which equals 6.'
+      },
+      {
+        id: '224',
+        icon: '🔐',
+        label: '224',
+        feedback: 'The second digit needs to be double the first digit, so it should be 4 rather than 2.'
+      }
+    ],
+    answer: '246',
+    success: 'Code cracked! You followed a sequence of mathematical rules—the same logical thinking used when designing algorithms.'
+  },
   INSY511: {
     type: 'choice',
     title: 'Solve the information problem',
