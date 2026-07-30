@@ -13,7 +13,7 @@ const DegreePage = ({ onBack }) => {
   const [activeSemester, setActiveSemester] = useState(1)
 
   return (
-    <div className="app">
+    <div className="app degree-app">
       <ParticleBackground />
       <motion.header
         className="app-header"
@@ -65,8 +65,9 @@ const DegreePage = ({ onBack }) => {
               🎓
             </motion.div>
             <div className="banner-content">
-              <h1 className="banner-title">Welcome to Open Day 2026</h1>
-              <p className="banner-subtitle">Discover Your Future in Technology</p>
+              <span className="banner-kicker">Choose your adventure</span>
+              <h1 className="banner-title">Bachelor of Computer and Information Science</h1>
+              <p className="banner-subtitle">Application Development · 3 Years · Build big ideas</p>
             </div>
           </motion.div>
 
